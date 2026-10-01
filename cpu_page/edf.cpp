@@ -6,6 +6,7 @@ struct Task {
   int execution;
   int period;
   int remaining;
+  int deadline;
 };
 
 int main() {
@@ -17,7 +18,9 @@ int main() {
   for (int i = 0; i < n; i++) {
     task[i].id = i + 1;
     cin >> task[i].execution >> task[i].period;
+
     task[i].remaining = 0;
+    task[i].deadline = 0;
   }
 
   int hyper = task[0].period;
@@ -31,15 +34,17 @@ int main() {
     for (int i = 0; i < n; i++) {
       if (time % task[i].period == 0) {
         task[i].remaining += task[i].execution;
+
+        task[i].deadline = time + task[i].period;
       }
     }
 
     int selected = -1;
 
-    // Find ready task with smallest period
+    // Find ready task with earliest deadline
     for (int i = 0; i < n; i++) {
       if (task[i].remaining > 0) {
-        if (selected == -1 || task[i].period < task[selected].period) {
+        if (selected == -1 || task[i].deadline < task[selected].deadline) {
           selected = i;
         }
       }
