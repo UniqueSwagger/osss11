@@ -1,0 +1,122 @@
+ 1  mkdir bsse1625
+    2  cd bsse1625/
+    3  ls
+    4  cd _
+    5  cd -
+    6  sudo ip a
+    7  cd ~
+    8  cd bsse1625/
+    9  cd ..
+   10  ls
+   11  touch bsse1637/gandu.txt
+   12  nano bsse1637/gandu.txt
+   13  echo test
+   14  echo "test"
+   15  echo "test\n"
+   16  echo q'test'
+   17  echo 'test'
+   18  man echo
+   19  echo -n test
+   20  sudo ip a
+   21  echo test 123
+   22  echo "test 123"
+   23  echo 'test 123'
+   24  cd bsse1625/
+   25  echo 'test whoami'
+   26  echo 'test `whoami`'
+   27  echo "test `whoami`"
+   28  $IAM=`whoami`
+   29  \IAM=`whoami`
+   30  IAM=`whoami`
+   31  IAM
+   32  echo IAM
+   33  echo "$IAM"
+   34  echo '$IAM'
+   35  cat << EOF > tt.txt
+10 AA B2
+20 BB A1
+EOF
+
+   36  cat tt.txt
+   37  ls >> ls.txt
+   38  cat ls.txt
+   39  ls | tee ls2.txt
+   40  ls
+   41  cat ls2.txt
+   42  history
+   43  history | tee commands.txt
+   44  ls
+   45  nano commands.txt
+   46  date
+   47  2026
+   48  date 2026
+   49  date 0
+   50  man date
+   51  date +%Y
+   52  date +%Y%m
+   53  date +%Y-%m
+   54  date +%Y-%M
+   55  date +%s
+   56  clear
+   57  man date
+   58  ls | tee "ls_`date +%Y%m`.txt"
+   59  ls
+   60  ls | tee "ls_`date +%Y%m%d`.txt"
+   61  ls
+   62  man sed
+   63  sed 's/AA/CC/' tt.txt
+   64  cat tt.txt
+   65  sed -i 's/AA/CC/' tt.txt
+   66  cat tt.txt
+   67  sed 's/B/A/' tt.txt
+   68  sed 's/B/A/g' tt.txt
+   69  sed 's/^/Line: /g' tt.txt
+   70  man cut
+   71  cut -fd tt.txt
+   72  cut -f -d tt.txt
+   73  cut -f1 tt.txt
+   74  cat tt.txt
+   75  cut -f2- tt.txt
+   76  cut -f2- tt.txt > tt1.txt
+   77  cat tt1.txt
+   78  cut -f2 tt.txt
+   79  cut -F2 tt.txt
+   80  cut -f1 tt.txt
+   81  cat tt.txt
+   82  man cut
+   83  cat ^-$ tt.txt
+   84  cut ^-$ tt.txt
+   85  cut -d' ' -f1 tt.txt
+   86  cut -d' ' -f1,3 tt.txt
+   87  cut -d' ' -f3,1 tt.txt
+   88  awk -F' ' '{print $3,$1,$2}' tt.txt
+   89  awk -F' ' '{print "$3,$1,$2"}' tt.txt
+   90  awk -F' ' '{print $3","$1","$2}' tt.txt
+   91  awk -F' ' '{print $3"+"$1"="$2}' tt.txt
+   92  ip l
+   93  ip link enp1s0
+   94  ip link -l enp1s0
+   95  ip -l enp1s0
+   96  ip l enp1s0
+   97  man ip
+   98  ip link
+   99  ip l dev enp1s0
+  100  ip l show dev enp1s0
+  101  ip l show dev enp1s0 > ip.txt
+  102  cat ip.txt
+  103  awk -F' ' '{print $14" "$1" "$2}' ip.txt
+  104  awk -F' ' '{print $15" "$1" "$2}' ip.txt
+  105  awk -F' ' '{print $15}' ip.txt
+  106  awk -F' ' '{print $14}' ip.txt
+  107  awk -F' ' '{print $15}' ip.txt
+  108  awk -F' ' '{print $16}' ip.txt
+  109  awk -F' ' '{print $14" "$1" "$2}' ip.txt
+  110  awk -F' ' '{print $14" "$15" "$2}' ip.txt
+  111  awk -F' ' '{print " "$15" "}' ip.txt
+  112  awk -F' ' '{print " "$2" "}' ip.txt
+  113  awk -F' ' '{print $2}' ip.txt
+  114  ip l show dev enp1s0 | grep link | cut -d' ' -f6
+  115  cd ..
+  116  zip -r lab1.zip ~/bsse16
+  117  ls
+  118  history > history_lab1.txt
